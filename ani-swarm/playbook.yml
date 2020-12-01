@@ -1,17 +1,10 @@
-  
----
-- name: Install common packages
-  hosts: swarm
+- hosts: manager
   roles:
     - common
-    - 
-
-- name: manager
-  hosts: manager
-  roles:
-    - dockermanager
+    - swarm-manger
 
 - name: worker
-  hosts: swarm-workers
+  become: true
   roles:
-    - worker
+   - common
+   - swarm-worker
