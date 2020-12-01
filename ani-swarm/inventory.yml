@@ -1,7 +1,9 @@
 [manager]
+swarm-manager
 34.89.4.21
 
 [worker]
+swarm-worker
 35.230.147.16
 34.89.232.42
 
