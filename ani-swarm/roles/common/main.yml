@@ -1,0 +1,17 @@
+  
+---
+- name: upgrade all packages
+  become: true
+  apt: name=* state=latest
+
+- name: install unzip
+  become: true
+  apt: name=unzip
+
+- name: Install python setup tools
+  become: true
+  apt: name=python-setuptools
+
+- name: install git
+  become: true
+  apt: name=git state=present

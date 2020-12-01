@@ -1,0 +1,16 @@
+[swarm-manager]
+34.89.4.21
+
+[swarm-manager:vars]
+ansible_ssh_private_key_file=/home/rjfar/.ssh/ansible_id_rsa
+
+[swarm-workers]
+35.230.147.16
+34.89.232.42
+
+[swarm-workers:vars]
+ansible_ssh_private_key_file=/home/rjfar/.ssh/ansible_id_rsa
+
+[swarm:children]
+swarm-manager
+swarm-workers
