@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Install required system packages
+    apt: name=curl state=latest update_cache=yes
+          
+  - name: Add Docker Code
+    url: https://get.docker.com
+    state: present
+  
+  - name: Install Docker
+    command: curl https://get.docker.com | sudo bash
+  
+  - name: Add User
+    command: sudo usermod -aG docker $(whoami)
+  
+  - name: Make Docker Usable
+    command: sudo systemctl restart docker
